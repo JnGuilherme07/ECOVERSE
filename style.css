@@ -265,7 +265,7 @@ footer {
 /*Sobre*/
 .sobre-nos {
   padding: 40px;
-  background-color: #1bbf6b;
+  background-color: #3bb27270;
 }
 
 .sobre-nos h2 {
@@ -312,5 +312,5 @@ footer {
 }
 
 h2 {
-  color: #fff;
+  color: #555;
 }
