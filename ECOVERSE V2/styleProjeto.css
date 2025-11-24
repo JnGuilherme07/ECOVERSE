@@ -1,0 +1,198 @@
+/*padrão*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(135deg, #f4fff6, #e8f5e9);
+  color: #333;
+  overflow-x: hidden;
+}
+
+/*---header--- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+header .logo img {
+  height: 50px;
+}
+
+.titulo-projeto {
+  color: #2e7d32;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+/*---sessão do projeto ------*/
+.projeto {
+  padding: 140px 10% 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.descricao {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.descricao h1 {
+  font-size: 2.2rem;
+  color: #2d8b58;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.descricao h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #3bb273;
+  border-radius: 2px;
+  margin: 10px auto 0;
+}
+
+.descricao p {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ---------gerador ----------*/
+.gerador {
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gerador:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+
+.gerador h2 {
+  color: #2d8b58;
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.gerador select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c8e6c9;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s;
+  margin-bottom: 15px;
+}
+
+.gerador select:focus {
+  border-color: #3bb273;
+}
+
+.gerador button {
+  width: 100%;
+  padding: 12px;
+  background: #3bb273;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.gerador button:hover {
+  background: #2d8b58;
+  transform: scale(1.02);
+}
+
+/* ----------report---------- */
+#relatorio {
+  margin-top: 25px;
+  text-align: left;
+  animation: fadeIn 0.4s ease;
+}
+
+#relatorio h3 {
+  color: #2d8b58;
+  margin-bottom: 10px;
+}
+
+#relatorio p {
+  margin-bottom: 6px;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------responsavidade ------*/
+@media (max-width: 768px) {
+  header {
+    padding: 0 5%;
+    height: 70px;
+  }
+
+  .titulo-projeto {
+    font-size: 1.2rem;
+  }
+
+  .descricao h1 {
+    font-size: 1.8rem;
+  }
+
+  .gerador {
+    padding: 30px 25px;
+  }
+}
+
+
+#gerar {
+  padding: 10px 20px;
+  background-color: #3bb273;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+#gerar:hover {
+  background-color: #3bb272a2;
+}

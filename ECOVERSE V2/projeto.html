@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecoverse - Projeto de Qualidade do Ar</title>
+  <link rel="stylesheet" href="styleProjeto.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="imgs/Group 1.png" alt="Logo Ecoverse">
+    </a>
+    <h2 class="titulo-projeto">Projeto - Qualidade do Ar</h2>
+  </header>
+
+  <section class="projeto">
+    <div class="descricao">
+      <h1>Sobre o Projeto</h1>
+      <p>
+        Este projeto visa monitorar e relatar a qualidade do ar em diferentes lugares do mundo. 
+        Nosso objetivo é conscientizar a população e auxiliar na formulação de políticas ambientais, 
+        utilizando dados de uma IA.
+      </p>
+    </div>
+
+  <div class="gerador">
+    <h2>Gerar Relatório de Qualidade do Ar</h2>
+    <select id="estado">
+      <option value="">Selecione um local</option>
+
+    <!-- Brasil -->
+      <option value="SP">São Paulo (Brasil)</option>
+      <option value="RJ">Rio de Janeiro (Brasil)</option>
+      <option value="DF">Distrito Federal (Brasil)</option>
+
+    <!-- EUA -->
+      <option value="USA-NY">Nova York (EUA)</option>
+      <option value="USA-CA">Califórnia - Los Angeles (EUA)</option>
+      <option value="USA-FL">Flórida - Miami (EUA)</option>
+      <option value="USA-TX">Texas - Houston (EUA)</option>
+
+    <!-- França -->
+      <option value="FR">França - Paris</option>
+
+    <!-- Japão -->
+      <option value="JP">Japão - Tóquio</option>
+      <option value="JP-OSK">Japão - Osaka</option>
+
+    <!-- Austrália -->
+      <option value="AU-NSW">Austrália - Sydney</option>
+      <option value="AU-VIC">Austrália - Melbourne</option>
+
+    <!-- México -->
+      <option value="MX">México - Cidade do México</option>
+    </select>
+
+      <button id="gerar">Gerar Relatório</button>
+
+  </div>
+
+      <div id="relatorio"></div>
+    </div>
+  </section>
+
+  <script src="gerador.js"></script>
+</body>
+</html>
