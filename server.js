@@ -13,7 +13,7 @@ const app = express();
 const PORT = 3000;
 
 // -------------------- CONEXÃO MONGODB --------------------
-const MONGO_URI = "mongodb+srv://coutojgs_db_user:TFngd2yhQDm9V0Jb@cluster0.ldewjfh.mongodb.net/?appName=Cluster0";
+const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI)
   .then(() => console.log("MongoDB conectado"))
@@ -35,7 +35,7 @@ app.use(express.json());
 
 app.use(
   session({
-    secret: "ecoverse_secret",
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({
