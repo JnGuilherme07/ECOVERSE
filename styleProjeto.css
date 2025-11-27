@@ -121,8 +121,8 @@ header .logo img {
 
 .gerador button {
   width: 100%;
-  padding: 12px;
-  background: #3bb273;
+  /*padding: 12px;
+  background: #3bb273;*/
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -211,4 +211,25 @@ a.logout-btn {
 
 a.logout-btn:hover {
     background: #e60000;
+}
+
+/* BOTÃO DE FAVORITO (estrelinha) */
+.fav-btn {
+  margin-top: 12px; /* espaço entre os botões */
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  transition: 0.2s;
+  color: #ffd700;
+}
+
+.fav-btn:hover {
+  transform: scale(1.15);
+}
+
+/* se quiser quando clicado ficar preenchido */
+.fav-btn.ativo {
+  color: #ffb300;
+  transform: scale(1.2);
 }
