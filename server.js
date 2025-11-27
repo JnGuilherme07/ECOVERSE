@@ -22,8 +22,10 @@ mongoose.connect(MONGO_URI)
 // -------------------- MODEL USER --------------------
 const UserSchema = new mongoose.Schema({
   username: String,
-  password: String
+  password: String,
+  favorites: [String]
 });
+
 
 const User = mongoose.model("User", UserSchema);
 
@@ -101,6 +103,30 @@ app.get("/logout", (req, res) => {
 app.get("/projeto", auth, (req, res) => {
   res.sendFile(path.join(__dirname, "projeto.html"));
 });
+
+
+// ---------- FAVORITOS ----------
+
+// Salvar favorito
+app.post("/favorite", auth, async (req, res) => {
+  const { place } = req.body;
+  const user = await User.findById(req.session.userId);
+
+  if (!user.favorites.includes(place)) {
+    user.favorites.push(place);
+    await user.save();
+  }
+
+  res.json({ ok: true });
+});
+
+// Listar favoritos
+app.get("/favorites", auth, async (req, res) => {
+  const user = await User.findById(req.session.userId);
+  res.json(user.favorites);
+});
+
+
 
 // 404
 app.use((req, res) => {

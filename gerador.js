@@ -76,3 +76,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+// ---------------- FAVORITOS -----------------
+
+const btnFavoritar = document.getElementById("favoritar");
+
+// Mostrar botão só após gerar relatório
+document.getElementById("gerar").addEventListener("click", () => {
+    btnFavoritar.style.display = "block";
+});
+
+// Salvar favorito no MongoDB
+btnFavoritar.addEventListener("click", async () => {
+    const estado = document.getElementById("estado").value;
+    if (!estado) return;
+
+    await fetch("/favorite", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ place: estado })
+    });
+
+    carregarFavoritos();
+});
+
+// Carregar lista de favoritos
+async function carregarFavoritos() {
+    const req = await fetch("/favorites");
+    const favs = await req.json();
+
+    const lista = document.getElementById("listaFavoritos");
+    lista.innerHTML = "";
+
+    favs.forEach(f => {
+        const li = document.createElement("li");
+        li.textContent = f;
+        lista.appendChild(li);
+    });
+}
+
+// Carregar ao abrir página
+carregarFavoritos();
