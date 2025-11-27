@@ -7,11 +7,12 @@
 }
 
 body {
-    background: #e8f5e9; /* verde bem clarinho vibes eco */
+    background: #e8f5e9;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 /* Container com os dois formulários */
@@ -67,4 +68,22 @@ button:hover {
 /* Separação entre forms */
 form {
     margin-bottom: 30px;
+}
+
+
+.voltar-btn {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.2s;
+    font-weight: bold;
+}
+
+.voltar-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
 }

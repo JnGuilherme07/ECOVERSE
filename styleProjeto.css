@@ -196,3 +196,19 @@ header .logo img {
 #gerar:hover {
   background-color: #3bb272a2;
 }
+
+
+a.logout-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #ff4d4d;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+a.logout-btn:hover {
+    background: #e60000;
+}
